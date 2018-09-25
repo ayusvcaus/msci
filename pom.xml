@@ -9,7 +9,6 @@
 
 	<properties>
 		<project.build.version>1.0.0-SNAPSHOT</project.build.version>
-		<spring.version>4.1.0.RELEASE</spring.version>
 	</properties>
 	<!-- =============================================Dependencies================================================== -->
 
@@ -20,12 +19,6 @@
           <version>4.10</version>
           <scope>test</scope>
        </dependency>
-		<dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-all</artifactId>
-            <version>1.10.19</version>
-            <scope>test</scope>
-        </dependency>
 	</dependencies>
 
 	<build>
