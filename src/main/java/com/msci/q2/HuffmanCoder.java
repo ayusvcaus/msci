@@ -17,7 +17,7 @@ public class HuffmanCoder {
     	int n=0;
         for (int i=0; i<s.length(); i++) {
             freq[s.charAt(i)]++;
-            if (freq[s.charAt(i)]>0) {
+            if (freq[s.charAt(i)]==1) {
             	n++;
             }
         } 	
@@ -59,16 +59,14 @@ public class HuffmanCoder {
     }   
 
     private void printTree(String[] table, TreeNode t, String path) {
-        if (t.left!=null && t.right!=null) { //Huffman tree node always have either 2 children or no children
+        if (t.left!=null && t.right!=null) { //Huffman tree node always has either 2 children or no children
         	printTree(table, t.left,  path+'0');
         	printTree(table, t.right, path+'1');
         } else {
         	if (path.length()>0) {
         	    t.code=path;
-        	    table[t.ch]=path;
-        	} else {
-        		table[t.ch]=t.code;
-        	}
+        	} 
+        	table[t.ch]=t.code;
         }
     }
     
@@ -81,7 +79,7 @@ public class HuffmanCoder {
         int end=1;
         while (end<=code.length()) {
         	boolean[] target={false};
-            String s = code.substring(start, end);
+            String s=code.substring(start, end);
             match(root, s, res, target);            
             if (target[0]) {
                 start=end;
